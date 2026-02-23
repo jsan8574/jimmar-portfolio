@@ -37,7 +37,6 @@ nav{
   top:0;
   z-index:100;
 }
-
 .nav-wrap{
   max-width:var(--max);
   margin:auto;
@@ -46,7 +45,6 @@ nav{
   justify-content:space-between;
   align-items:center;
 }
-
 nav a{
   color:white;
   text-decoration:none;
@@ -54,7 +52,6 @@ nav a{
   font-size:14px;
   opacity:.9;
 }
-
 nav a:hover{opacity:1;}
 
 /* HEADER */
@@ -64,16 +61,15 @@ header{
   padding:60px 20px;
   text-align:center;
 }
-
 header h1{margin:0;font-size:34px;}
 header p{margin-top:10px;opacity:.85;}
 
+/* LAYOUT */
 .wrap{
   max-width:var(--max);
   margin:auto;
   padding:40px 20px 60px;
 }
-
 .section{margin-bottom:50px;}
 .section h2{
   font-size:14px;
@@ -83,6 +79,7 @@ header p{margin-top:10px;opacity:.85;}
   margin-bottom:18px;
 }
 
+/* CARDS */
 .card{
   background:var(--card);
   border:1px solid var(--border);
@@ -100,7 +97,7 @@ header p{margin-top:10px;opacity:.85;}
 }
 @media(max-width:900px){.grid{grid-template-columns:1fr;}}
 
-/* EXPERIENCE */
+/* EXPERIENCE (Accordion) */
 .exp{
   border-left:4px solid var(--accent);
   padding-left:18px;
@@ -114,27 +111,49 @@ header p{margin-top:10px;opacity:.85;}
 .exp span{
   font-size:13px;
   color:var(--muted);
+  display:block;
+  margin-top:3px;
 }
 .details{
   display:none;
   margin-top:10px;
 }
+.details ul{margin:8px 0 0 18px; color:var(--muted);}
 
-/* COUNTERS */
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+.badge{
+  display:inline-block;
+  background:#eaf1f8;
+  color:var(--accent);
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+/* KPI counters */
 .stats{
   display:flex;
   gap:30px;
   flex-wrap:wrap;
+  margin-top:14px;
 }
 .stat{
   font-size:28px;
-  font-weight:bold;
+  font-weight:700;
   color:var(--navy);
 }
 .stat-label{
   font-size:13px;
   color:var(--muted);
 }
+
+/* Links */
+a{color:var(--accent);}
 
 footer{
   text-align:center;
@@ -143,7 +162,6 @@ footer{
   padding:30px 0;
   border-top:1px solid var(--border);
 }
-a{color:var(--accent);}
 </style>
 </head>
 
@@ -169,72 +187,219 @@ a{color:var(--accent);}
 
 <div class="wrap">
 
-<section class="section" id="about">
-  <h2>Professional Summary</h2>
-  <div class="card">
-    Healthcare and Revenue Cycle professional with 12+ years of progressive experience across AR & Denials,
-    Patient Collections, QA governance, multi-region training leadership, and performance enablement.
-    <br><br>
-    Known for integrating Operations, Quality, and Learning frameworks to strengthen revenue-sensitive workforce capability.
-  </div>
-
-  <div class="section">
-    <h2>Impact Snapshot</h2>
-    <div class="stats">
-      <div>
-        <div class="stat" data-target="12">0</div>
-        <div class="stat-label">Years in US Healthcare</div>
-      </div>
-      <div>
-        <div class="stat" data-target="4">0</div>
-        <div class="stat-label">Countries Supported</div>
-      </div>
-      <div>
-        <div class="stat" data-target="19">0</div>
-        <div class="stat-label">QAs Managed (Peak)</div>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <h2>Professional Summary</h2>
+    <div class="card">
+      Healthcare and Revenue Cycle professional with 12+ years of progressive experience across AR & Denials,
+      Patient Collections, QA governance, multi-region training leadership, and performance enablement (PH • India • Sri Lanka • US-facing teams).
+      <br><br>
+      Known for integrating Operations, Quality, and Learning frameworks to strengthen revenue-sensitive workforce capability and performance consistency.
+      <div class="badges">
+        <span class="badge">Patient Collections</span>
+        <span class="badge">QA Governance</span>
+        <span class="badge">L&D Leadership</span>
+        <span class="badge">Multi-Region Enablement</span>
+        <span class="badge">Leadership Programs</span>
+        <span class="badge">AI Pilots</span>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="section" id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <strong>Email:</strong> <a href="mailto:jsan8574@gmail.com">jsan8574@gmail.com</a><br><br>
-    <strong>Phone:</strong> <a href="tel:+639173023263">+63 917 302 3263</a><br><br>
-    <strong>LinkedIn:</strong> 
-    <a href="https://www.linkedin.com/in/jimmarsanbuenaventurarn/" target="_blank">
-      linkedin.com/in/jimmarsanbuenaventurarn
-    </a>
-  </div>
-</section>
+    <div class="section" style="margin-top:22px;">
+      <h2>Impact Snapshot</h2>
+      <div class="card">
+        <div class="stats">
+          <div>
+            <div class="stat" data-target="12">0</div>
+            <div class="stat-label">Years in US Healthcare</div>
+          </div>
+          <div>
+            <div class="stat" data-target="4">0</div>
+            <div class="stat-label">Countries Supported (PH/IN/SL/US)</div>
+          </div>
+          <div>
+            <div class="stat" data-target="19">0</div>
+            <div class="stat-label">QAs Managed (Peak)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-© 2026 Jimmar San Buenaventura • Executive Interactive Portfolio
-</footer>
+  <!-- PROGRAMS -->
+  <section class="section" id="programs">
+    <h2>Program Portfolio</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>ELP 2.0 — Emerging Leaders Program</h3>
+        Coordinated with facilitators and delivered selected modules focused on KPI governance and coaching effectiveness.
+      </div>
+      <div class="card">
+        <h3>CX360 — Leadership Upskilling (ATLs & Above)</h3>
+        Upskilling leaders on handling teams better and communicating performance with clients.
+      </div>
+      <div class="card">
+        <h3>BAYB 1.0 & 2.0 — Be At Your Best (2.0 Ongoing)</h3>
+        Professional communication and workplace excellence program; BAYB 2.0 ongoing rollout.
+      </div>
+      <div class="card">
+        <h3>ACE 1 & 2 — Accelerate Communication Excellence</h3>
+        Communication excellence refresher training for patient services / customer service aligned to collections conversations.
+      </div>
+      <div class="card">
+        <h3>Nexcellence — Senior Upskilling (Ongoing)</h3>
+        Ongoing upskilling for Senior Agents, ATLs and TLs to strengthen support capability and coaching mindset.
+      </div>
+      <div class="card">
+        <h3>CAP Lab — Communication & Process Lab (In Development)</h3>
+        QA-driven remediation framework to address repeat errors using targeted coaching and structured reinforcement.
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="exp">
+      <h3 onclick="toggle(this)">HealthRecon Connect (HRC) — Assistant Manager (Ops Support, Quality & L&D)</h3>
+      <span>Oct 2022 – Present</span>
+      <div class="details">
+        <ul>
+          <li>Oversee Quality Analysts (PH) and Trainers (PH & India) ensuring calibration alignment and standardized curriculum delivery.</li>
+          <li>Co-developed centralized Quality Compendium consolidating audit definitions, governance controls, and escalation pathways.</li>
+          <li>Delivered and coordinated programs: ELP 2.0, CX360, Nexcellence (ongoing), BAYB 1.0 & 2.0 (ongoing), ACE 1 & 2.</li>
+          <li>Designed structured RCM curriculum (Scheduling, Authorization, VOB, Billing, AR, Denials).</li>
+          <li>Led onboarding for US new hires and US leaders; coordinated Information Security and IT provisioning.</li>
+          <li>Designed CAP Lab (in development) anchored on QA trends and targeted remediation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <h3 onclick="toggle(this)">Optum (UnitedHealth Group) — Training & Quality Supervisor (Second Tenure)</h3>
+      <span>2021 – 2022</span>
+      <div class="details">
+        <ul>
+          <li>Managed 19 Quality Analysts and 1 Trainer; strengthened QA-training alignment and calibration processes.</li>
+          <li>Supported governance initiatives tying audit findings to capability reinforcement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <h3 onclick="toggle(this)">Tata Consultancy Services (TCS) — Assistant Manager (Operations)</h3>
+      <span>2020 – 2021</span>
+      <div class="details">
+        <ul>
+          <li>Led Knowledge Transfer (KT) and supported due diligence for a Patient Collections business.</li>
+          <li>Ensured structured migration of processes and training materials supporting ramp-up readiness.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <h3 onclick="toggle(this)">Optum (UnitedHealth Group) — Progressive Roles (First Tenure)</h3>
+      <span>2015 – 2020</span>
+      <div class="details">
+        <ul>
+          <li>Collections Specialist (AR follow-up & denial management) → Quality Analyst → RCM Trainer → Assistant Manager (Ops).</li>
+          <li>Built foundation in revenue cycle operations, performance monitoring, and workforce enablement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <h3 onclick="toggle(this)">Convergys — Benefits & Claims Specialist (Provider Services)</h3>
+      <span>2013 – 2015</span>
+      <div class="details">
+        <ul>
+          <li>Supported benefits and claims workflows and provider inquiries; strengthened payer-side process foundation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <h3 onclick="toggle(this)">Earlier Healthcare Foundation — Goldcare / Local Clinic</h3>
+      <span>Earlier</span>
+      <div class="details">
+        <ul>
+          <li>Local health insurance: billing forms, approvals hotline support, patient coverage education, provider contracting support.</li>
+          <li>Clinical: outpatient surgery / lying-in clinic exposure; patient education and coordination.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="color:var(--muted); font-size:13px; margin-top:10px;">
+      Tip: Click each role title to expand/collapse details.
+    </p>
+  </section>
+
+  <!-- INNOVATION -->
+  <section class="section" id="innovation">
+    <h2>Innovation & Digital Initiatives</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>RCM Assistant (ChatGPT & Copilot) — Testing</h3>
+        Piloting an internal assistant to support structured RCM learning, case-based practice, and faster knowledge reinforcement.
+      </div>
+      <div class="card">
+        <h3>Coaching Log Assistant — In Progress</h3>
+        Helps leaders structure coaching points and generate copy-paste-ready coaching log documentation.
+      </div>
+      <div class="card">
+        <h3>Hybrid L&D Content Creator — In Progress</h3>
+        Streamlines L&D content creation while maintaining governance and standard messaging.
+      </div>
+      <div class="card">
+        <h3>Generic PMS Training Simulator — In Collaboration</h3>
+        Working with a software engineer to build a generic PMS simulation tool for training use (workflow practice in a controlled environment).
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <strong>Email:</strong> <a href="mailto:jsan8574@gmail.com">jsan8574@gmail.com</a><br><br>
+      <strong>Phone:</strong> <a href="tel:+639173023263">+63 917 302 3263</a><br><br>
+      <strong>LinkedIn:</strong>
+      <a href="https://www.linkedin.com/in/jimmarsanbuenaventurarn/" target="_blank" rel="noopener noreferrer">
+        linkedin.com/in/jimmarsanbuenaventurarn
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Jimmar San Buenaventura • Executive Interactive Portfolio
+  </footer>
 
 </div>
 
 <script>
-function toggle(element){
-  const details = element.parentElement.querySelector('.details');
-  details.style.display = details.style.display === 'block' ? 'none' : 'block';
+function toggle(el){
+  const details = el.parentElement.querySelector('.details');
+  const isOpen = details.style.display === 'block';
+  details.style.display = isOpen ? 'none' : 'block';
 }
 
+/* Counter Animation */
 const counters = document.querySelectorAll('.stat');
 counters.forEach(counter => {
-  const update = () => {
-    const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
-    const inc = target / 50;
-    if(count < target){
-      counter.innerText = Math.ceil(count + inc);
-      setTimeout(update, 30);
-    } else {
+  const target = +counter.getAttribute('data-target');
+  let count = 0;
+  const step = Math.max(1, Math.floor(target / 50));
+  const tick = () => {
+    count += step;
+    if(count >= target){
       counter.innerText = target;
+      return;
     }
-  }
-  update();
+    counter.innerText = count;
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
 });
 </script>
 
